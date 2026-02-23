@@ -1,5 +1,5 @@
-// Live Server(5500) 사용 시 Express(3000) API로 요청, Express 사용 시 상대경로
-const API_URL = (window.location.port === '5500' || window.location.port === '')
+// Live Server(5500) 사용 시에만 Express(3000)로 요청, 그 외(Express/Vercel)는 상대경로
+const API_URL = window.location.port === '5500'
     ? 'http://localhost:3000/api/movies'
     : '/api/movies';
 const POSTER_BASE = 'https://image.tmdb.org/t/p/w500';
